@@ -12,3 +12,16 @@ const server = http.createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+var mysql = require('mysql');
+
+var con = mysql.createConnection({
+  host: "localhost",
+  user: "myusername",
+  password: "mypassword"
+});
+
+con.connect(function(err) {
+  if (err) throw err;
+  console.log("Connected!");
+});
